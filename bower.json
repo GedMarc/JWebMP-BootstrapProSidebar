@@ -1,0 +1,42 @@
+{
+  "name": "JWebMP Bootstrap Pro Sidebar",
+  "authors": [
+    "Marc Magon <marc.magon@gmail.com>"
+  ],
+  "description": "JWebMP Bootstrap Pro Sidebar",
+  "main": "",
+  "keywords": [
+    "JWebMP",
+    "Bootstrap",
+    "WebFramework",
+    "RAD",
+    "Development",
+    "IDE",
+    "Develop"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.jwebmp.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrapprosidebar": "https://github.com/azouaoui-med/pro-sidebar-template.git"
+  },
+  "ignoredDependencies": [
+    "jquery-ui",
+	"jquery",
+	"bootstrap",
+	"angular",
+    "font-awesome",
+    "holderjs",
+    "metisMenu",
+    "cldrjs",
+    "bootstrap-social",
+    "flot.tooltip"
+  ]
+}
