@@ -7,7 +7,7 @@ import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.interfaces.IIcon;
 import com.jwebmp.plugins.bootstrap4.badge.BSBadge;
 
-public class ProSidebarMenuDropdown<J extends ProSidebarMenuDropdown<J>>
+public class ProSidebarMenuDropdownItem<J extends ProSidebarMenuDropdownItem<J>>
 		extends ListItem<J>
 {
 	private final Link<?> link = new Link<>("#");
@@ -16,7 +16,7 @@ public class ProSidebarMenuDropdown<J extends ProSidebarMenuDropdown<J>>
 	private String text;
 	private BSBadge<?> badge;
 
-	public ProSidebarMenuDropdown()
+	public ProSidebarMenuDropdownItem()
 	{
 		addClass("sidebar-dropdown");
 		add(link);

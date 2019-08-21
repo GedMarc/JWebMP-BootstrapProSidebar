@@ -7,6 +7,7 @@ import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
 import com.jwebmp.plugins.bs4.prosidebar.enumerations.ProSidebarDefaultThemes;
 import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarDropdownMenuFeature;
 import com.jwebmp.plugins.bs4.prosidebar.parts.ProSidebarContent;
+import com.jwebmp.plugins.bs4.prosidebar.parts.footer.ProSidebarFooter;
 import com.jwebmp.plugins.malihu.MalihuScrollbarFeature;
 import com.jwebmp.plugins.malihu.enumerations.MalihuScrollbarAxis;
 import com.jwebmp.plugins.malihu.enumerations.MalihuScrollbarThemes;
@@ -23,6 +24,7 @@ public class ProSidebar<J extends ProSidebar<J>>
 	private IProSidebarTheme<?> theme = ProSidebarDefaultThemes.Default_Theme;
 
 	private ProSidebarContent<?> content = new ProSidebarContent<>();
+	private ProSidebarFooter<?> footer = new ProSidebarFooter<>();
 
 	private boolean showBackground;
 	private String cssBackgroundClass;
@@ -43,34 +45,18 @@ public class ProSidebar<J extends ProSidebar<J>>
 		setID("sidebarWrapper");
 
 		setTag(ComponentTypes.Navigation);
-		scrollbarFeature = new MalihuScrollbarFeature<>(this);
+		add(content);
+		add(footer);
 
-		scrollbarFeature.getOptions()
-		                .setAxis(MalihuScrollbarAxis.Y)
-		                .setTheme(MalihuScrollbarThemes.Rounded_Dots)
-		                .setScrollButtons(new MalihuScrollBarScrollButtonsOptions<>().setEnable(true))
-		                .setScrollInertia(300);
+		scrollbarFeature = new MalihuScrollbarFeature<>(content);
 
-		if (withScroll)
+		if (!withScroll)
 		{
-			addFeature(scrollbarFeature);
+			content.removeFeature(scrollbarFeature);
 		}
 
 		addFeature(new ProSidebarDropdownMenuFeature(this));
 		//addFeature(new ProSidebarToggleSidebarOverlayFeature(this, pageWrapper));
-	}
-
-	@Override
-	public void init()
-	{
-		if (!isInitialized())
-		{
-			if (content != null)
-			{
-				add(content);
-			}
-		}
-		super.init();
 	}
 
 	@Override
@@ -238,6 +224,8 @@ public class ProSidebar<J extends ProSidebar<J>>
 		return this;
 	}
 
+
+
 	/**
 	 * Getter for property 'content'.
 	 *
@@ -257,6 +245,27 @@ public class ProSidebar<J extends ProSidebar<J>>
 	public ProSidebar<J> setContent(ProSidebarContent<?> content)
 	{
 		this.content = content;
+		return this;
+	}
+
+	/**
+	 * Getter for property 'footer'.
+	 *
+	 * @return Value for property 'footer'.
+	 */
+	public ProSidebarFooter<?> getFooter()
+	{
+		return footer;
+	}
+
+	/**
+	 * Setter for property 'footer'.
+	 *
+	 * @param footer Value to set for property 'footer'.
+	 */
+	public ProSidebar<J> setFooter(ProSidebarFooter<?> footer)
+	{
+		this.footer = footer;
 		return this;
 	}
 }

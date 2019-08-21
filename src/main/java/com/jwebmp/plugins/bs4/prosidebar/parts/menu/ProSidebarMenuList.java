@@ -7,6 +7,9 @@ import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.core.base.html.interfaces.children.ListChildren;
 import com.jwebmp.core.base.html.interfaces.events.GlobalEvents;
 import com.jwebmp.core.base.interfaces.IIcon;
+import com.jwebmp.plugins.bs4.prosidebar.parts.footer.ProSidebarFooter;
+
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 public class ProSidebarMenuList<C extends ListChildren, A extends Enum & AttributeDefinitions, E extends GlobalEvents, J extends List<C, A, E, J>>
 		extends List<C, A, E, J>
@@ -30,6 +33,7 @@ public class ProSidebarMenuList<C extends ListChildren, A extends Enum & Attribu
 		{
 			span.add(icon.getIconComponent());
 			span.setRenderTextBeforeChildren(false);
+			span.setText(HTML_TAB + headerMenuText);
 		}
 		li.add(span);
 		add((C) li);
@@ -37,9 +41,9 @@ public class ProSidebarMenuList<C extends ListChildren, A extends Enum & Attribu
 	}
 
 
-	public J addMenuDropdown(ProSidebarMenuDropdown<?> dropdown)
+	public J addMenuDropdown(ProSidebarMenuDropdownItem<?> dropdown)
 	{
-		add((C)dropdown);
+		add((C) dropdown);
 		return (J) this;
 	}
 }

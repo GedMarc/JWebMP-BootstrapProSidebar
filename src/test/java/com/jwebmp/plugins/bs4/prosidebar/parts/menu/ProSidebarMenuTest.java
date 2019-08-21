@@ -18,12 +18,12 @@ class ProSidebarMenuTest
 		    .addHeaderMenu("General", null);
 
 		menu.getList()
-		    .addMenuDropdown(new ProSidebarMenuDropdown<>()
+		    .addMenuDropdown(new ProSidebarMenuDropdownItem<>()
 				                     .setIcon(FontAwesome.icon(tachometer_alt, Solid))
 				                     .setText("Dashboard")
 				                     .setBadge(new BSBadgeWarning<>(true).setText("New"))
 
-				                     .addSubmenu(new ProSidebarMenuDropdown.ProSidebarMenuSubMenu<>()
+				                     .addSubmenu(new ProSidebarMenuDropdownItem.ProSidebarMenuSubMenu<>()
 						                                 .addSubItem("Dashboard 1",
 						                                             new BSBadgeSuccess<>(true)
 								                                 , null, null)
