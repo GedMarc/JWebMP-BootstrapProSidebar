@@ -24,13 +24,13 @@ class ProSidebarFooterTest
 
 		menu.addHeader(FontAwesome.icon(bell, Solid), "Notifications");
 		menu.addDivider();
-		menu.addCheckedItem("Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo",
-		                    "6 minutes ago",
-		                    FontAwesome.icon(check, Solid)
+		menu.addItem("Lorem ipsum dolor sit amet consectetur adipisicing elit. In totam explicabo",
+		             "6 minutes ago",
+		             FontAwesome.icon(check, Solid)
 		                               .addClass(Text_Success)
 		                               .addClass("border")
 		                               .addClass(Border_Success)
-		                   );
+		            );
 
 		System.out.println(footer.toString(true));
 	}

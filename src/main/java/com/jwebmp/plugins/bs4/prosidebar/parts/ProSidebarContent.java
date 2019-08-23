@@ -12,7 +12,7 @@ public class ProSidebarContent<J extends ProSidebarContent<J>>
 	public ProSidebarContent()
 	{
 		addClass("sidebar-content");
-		addStyle("overflow-y", "auto");
+	//	addStyle("overflow-y", "auto");
 	}
 
 	@SuppressWarnings("unchecked")

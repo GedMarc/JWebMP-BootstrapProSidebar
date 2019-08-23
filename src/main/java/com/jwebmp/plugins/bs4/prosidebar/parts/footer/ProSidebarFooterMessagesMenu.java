@@ -42,4 +42,10 @@ public class ProSidebarFooterMessagesMenu<J extends ProSidebarFooterMessagesMenu
 		return (J) this;
 	}
 
+	public J addItem(ProSidebarFooterLabelledItem<?> item)
+	{
+		add(item);
+		return (J) this;
+	}
+
 }

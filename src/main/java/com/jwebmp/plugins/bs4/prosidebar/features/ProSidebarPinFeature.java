@@ -9,13 +9,12 @@ import com.jwebmp.plugins.bs4.prosidebar.ProSidebar;
 public class ProSidebarPinFeature<J extends ProSidebarPinFeature<J>>
 		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
 {
-	private ComponentHierarchyBase pageWrapper;
 	private ProSidebar sidebar;
 
-	public ProSidebarPinFeature(ComponentHierarchyBase component, ComponentHierarchyBase pageWrapper, ProSidebar sidebar)
+	public ProSidebarPinFeature(String componentId, ComponentHierarchyBase component, ProSidebar sidebar)
 	{
 		super("ProSidebarPinFeature", component);
-		this.pageWrapper = pageWrapper;
+		component.setID(componentId);
 		this.sidebar = sidebar;
 	}
 
@@ -28,45 +27,24 @@ public class ProSidebarPinFeature<J extends ProSidebarPinFeature<J>>
 	private String renderQuery()
 	{
 		return "click(function () {" + getNewLine() +
-		       "        if ($(\"" + pageWrapper.getID(true) + "\").hasClass(\"pinned\")) {" + getNewLine() +
+		       "        if ($(\"#pageWrapper\").hasClass(\"pinned\")) {" + getNewLine() +
 		       "            // unpin sidebar when hovered" + getNewLine() +
-		       "            $(\"" + pageWrapper.getID(true) + "\").removeClass(\"pinned\");" + getNewLine() +
+		       "            $(\"#pageWrapper\").removeClass(\"pinned\");" + getNewLine() +
 		       "            $(\"" + sidebar.getID(true) + "\").unbind( \"hover\");" + getNewLine() +
 		       "        } else {" + getNewLine() +
-		       "            $(\"" + pageWrapper.getID(true) + "\").addClass(\"pinned\");" + getNewLine() +
+		       "            $(\"#pageWrapper\").addClass(\"pinned\");" + getNewLine() +
 		       "            $(\"" + sidebar.getID(true) + "\").hover(" + getNewLine() +
 		       "                function () {" + getNewLine() +
 		       "                    //console.log(\"mouseenter\");" + getNewLine() +
-		       "                    $(\"" + pageWrapper.getID(true) + "\").addClass(\"sidebar-hovered\");" + getNewLine() +
+		       "                    $(\"#pageWrapper\").addClass(\"sidebar-hovered\");" + getNewLine() +
 		       "                }," + getNewLine() +
 		       "                function () {" + getNewLine() +
 		       "                    //console.log(\"mouseout \");" + getNewLine() +
-		       "                    $(\"" + pageWrapper.getID(true) + "\").removeClass(\"sidebar-hovered\");" + getNewLine() +
+		       "                    $(\"#pageWrapper\").removeClass(\"sidebar-hovered\");" + getNewLine() +
 		       "                }" + getNewLine() +
 		       "            )" + getNewLine() +
 		       "        }" + getNewLine() +
 		       "    });";
-	}
-
-	/**
-	 * Getter for property 'pageWrapper'.
-	 *
-	 * @return Value for property 'pageWrapper'.
-	 */
-	public ComponentHierarchyBase getPageWrapper()
-	{
-		return pageWrapper;
-	}
-
-	/**
-	 * Setter for property 'pageWrapper'.
-	 *
-	 * @param pageWrapper Value to set for property 'pageWrapper'.
-	 */
-	public ProSidebarPinFeature<J> setPageWrapper(ComponentHierarchyBase pageWrapper)
-	{
-		this.pageWrapper = pageWrapper;
-		return this;
 	}
 
 	/**

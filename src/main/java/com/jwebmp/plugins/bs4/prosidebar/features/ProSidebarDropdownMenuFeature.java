@@ -35,7 +35,7 @@ public class ProSidebarDropdownMenuFeature<J extends ProSidebarDropdownMenuFeatu
 		       "            $(this).next(\".sidebar-submenu\").slideDown(" + slideDownRate + ");" + getNewLine() +
 		       "            $(this).parent().addClass(\"active\");" + getNewLine() +
 		       "        }" + getNewLine() +
-		       "});";
+		       "});" + getNewLine();
 	}
 
 	/**

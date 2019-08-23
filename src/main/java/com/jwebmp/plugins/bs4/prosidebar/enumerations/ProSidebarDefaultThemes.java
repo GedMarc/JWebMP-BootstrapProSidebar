@@ -11,6 +11,7 @@ public enum ProSidebarDefaultThemes implements IProSidebarTheme<ProSidebarDefaul
 	Cool_Theme,
 	Light_Theme;
 
+
 	@Override
 	public String toString()
 	{

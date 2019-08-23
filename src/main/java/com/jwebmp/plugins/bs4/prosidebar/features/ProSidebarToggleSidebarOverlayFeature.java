@@ -8,12 +8,10 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 public class ProSidebarToggleSidebarOverlayFeature<J extends ProSidebarToggleSidebarOverlayFeature<J>>
 		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
 {
-	private ComponentHierarchyBase pageWrapper;
 
-	public ProSidebarToggleSidebarOverlayFeature(ComponentHierarchyBase component, ComponentHierarchyBase pageWrapper)
+	public ProSidebarToggleSidebarOverlayFeature(ComponentHierarchyBase component)
 	{
 		super("ProSidebarToggleSidebarOverlayFeature", component);
-		this.pageWrapper = pageWrapper;
 	}
 
 	@Override
@@ -25,7 +23,8 @@ public class ProSidebarToggleSidebarOverlayFeature<J extends ProSidebarToggleSid
 	private String renderQuery()
 	{
 		return "click(function () {" + getNewLine() +
-		       " $('" + pageWrapper.getID(true) + "').toggleClass(\"toggled\");" + getNewLine() +
-		       "});";
+		       " $('.page-wrapper')" +
+		       ".toggleClass(\"toggled\");" + getNewLine() +
+		       "});" + getNewLine();
 	}
 }

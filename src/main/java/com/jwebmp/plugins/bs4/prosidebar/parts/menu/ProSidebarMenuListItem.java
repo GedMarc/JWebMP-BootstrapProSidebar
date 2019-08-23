@@ -9,6 +9,7 @@ import com.jwebmp.plugins.bootstrap4.badge.BSBadge;
 
 public class ProSidebarMenuListItem<J extends ProSidebarMenuListItem<J>>
 		extends ListItem<J>
+	implements IProSidebarMenuItem<J>
 {
 	private final Link<?> link = new Link<>("#");
 

@@ -5,9 +5,11 @@ import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.base.html.Paragraph;
 import com.jwebmp.core.base.interfaces.IIcon;
 import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownLink;
+import com.jwebmp.plugins.bs4.prosidebar.parts.menu.IProSidebarMenuItem;
 
 public class ProSidebarFooterCheckedItem<J extends ProSidebarFooterCheckedItem<J>>
 		extends BSDropDownLink<J>
+	implements IProSidebarMenuItem<J>
 {
 	private DivSimple<?> notificationContentDiv = new DivSimple<>().addClass("notification-content");
 	private DivSimple<?> contentDiv = new DivSimple<>().addClass("content");

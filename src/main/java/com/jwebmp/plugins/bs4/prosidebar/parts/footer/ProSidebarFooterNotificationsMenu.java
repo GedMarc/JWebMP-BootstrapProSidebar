@@ -1,7 +1,6 @@
 package com.jwebmp.plugins.bs4.prosidebar.parts.footer;
 
 import com.jwebmp.core.Event;
-import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.base.interfaces.IIcon;
 import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownMenu;
@@ -18,6 +17,7 @@ public class ProSidebarFooterNotificationsMenu<J extends ProSidebarFooterNotific
 		addAttribute(Aria_LabelledBy, "dropdownMenuMessage");
 	}
 
+
 	@SuppressWarnings("unchecked")
 	public J addHeader(IIcon<?> icon, String text)
 	{
@@ -25,19 +25,28 @@ public class ProSidebarFooterNotificationsMenu<J extends ProSidebarFooterNotific
 		div.addClass("notifications-header");
 		add(div);
 
-		div.add(icon.getIconComponent());
-		div.setText(HTML_TAB + text);
+		if (icon != null)
+		{
+			div.add(icon.getIconComponent());
+		}
+		div.setText(HTML_TAB + (text == null ? "" : text));
 		div.setRenderTextBeforeChildren(false);
 		return (J) this;
 	}
 
-	public J addCheckedItem(String notificationDetail, String timeAgo, IIcon<?> checkIcon, Event<?, ?>... events)
+	public J addItem(String notificationDetail, String timeAgo, IIcon<?> checkIcon, Event<?, ?>... events)
 	{
 		ProSidebarFooterCheckedItem<?> item = new ProSidebarFooterCheckedItem<>(notificationDetail, timeAgo, checkIcon);
 		for (Event<?, ?> event : events)
 		{
 			item.addEvent(event);
 		}
+		add(item);
+		return (J) this;
+	}
+
+	public J addItem(ProSidebarFooterCheckedItem<?> item)
+	{
 		add(item);
 		return (J) this;
 	}

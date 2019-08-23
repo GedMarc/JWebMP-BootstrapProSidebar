@@ -10,9 +10,10 @@ public class ProSidebarToggleSidebarFeature<J extends ProSidebarToggleSidebarFea
 {
 	private ComponentHierarchyBase pageWrapper;
 
-	public ProSidebarToggleSidebarFeature(ComponentHierarchyBase component, ComponentHierarchyBase pageWrapper)
+	public ProSidebarToggleSidebarFeature(String componentId,ComponentHierarchyBase component, ComponentHierarchyBase pageWrapper)
 	{
 		super("ProSidebarToggleSidebarFeature", component);
+		component.setID(componentId);
 		this.pageWrapper = pageWrapper;
 	}
 

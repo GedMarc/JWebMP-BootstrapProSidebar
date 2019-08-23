@@ -6,6 +6,7 @@ import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
 import com.jwebmp.plugins.bs4.prosidebar.enumerations.ProSidebarDefaultThemes;
 import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarDropdownMenuFeature;
+import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarToggleSidebarOverlayFeature;
 import com.jwebmp.plugins.bs4.prosidebar.parts.ProSidebarContent;
 import com.jwebmp.plugins.bs4.prosidebar.parts.footer.ProSidebarFooter;
 import com.jwebmp.plugins.malihu.MalihuScrollbarFeature;
@@ -21,10 +22,10 @@ public class ProSidebar<J extends ProSidebar<J>>
 	private ComponentHierarchyBase pageWrapper;
 
 	private MalihuScrollbarFeature<?> scrollbarFeature;
-	private IProSidebarTheme<?> theme = ProSidebarDefaultThemes.Default_Theme;
+	private IProSidebarTheme<?> theme;
 
-	private ProSidebarContent<?> content = new ProSidebarContent<>();
-	private ProSidebarFooter<?> footer = new ProSidebarFooter<>();
+	private ProSidebarContent<?> content;
+	private ProSidebarFooter<?> footer;
 
 	private boolean showBackground;
 	private String cssBackgroundClass;
@@ -38,17 +39,19 @@ public class ProSidebar<J extends ProSidebar<J>>
 	public ProSidebar(ComponentHierarchyBase pageWrapper, boolean withScroll)
 	{
 		this.pageWrapper = pageWrapper;
-		pageWrapper.addClass("page-wrapper");
-		pageWrapper.setID("pageWrapper");
 
 		addClass("sidebar-wrapper");
-		setID("sidebarWrapper");
+		setID("sidebar");
 
 		setTag(ComponentTypes.Navigation);
-		add(content);
-		add(footer);
 
+		content = new ProSidebarContent<>();
+		content.setID("customScrollbarContentID");
 		scrollbarFeature = new MalihuScrollbarFeature<>(content);
+		add(content);
+
+		footer = new ProSidebarFooter<>();
+		add(footer);
 
 		if (!withScroll)
 		{
@@ -56,19 +59,9 @@ public class ProSidebar<J extends ProSidebar<J>>
 		}
 
 		addFeature(new ProSidebarDropdownMenuFeature(this));
-		//addFeature(new ProSidebarToggleSidebarOverlayFeature(this, pageWrapper));
-	}
+		theme = ProSidebarDefaultThemes.Default_Theme;
 
-	@Override
-	public void preConfigure()
-	{
-		if (!isConfigured())
-		{
-			pageWrapper.addClass(theme.toString());
-		}
-		super.preConfigure();
 	}
-
 
 	/**
 	 * Getter for property 'pageWrapper'.

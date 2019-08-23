@@ -25,7 +25,7 @@ public class ProSidebarFooterLabelledItem<J extends ProSidebarFooterLabelledItem
 		//No config required
 	}
 
-	public ProSidebarFooterLabelledItem(String notificationDetail, String title, Image<?> image)
+	public ProSidebarFooterLabelledItem(String title,String notificationDetail , Image<?> image)
 	{
 		this.notificationDetail = notificationDetail;
 		this.title = title;
