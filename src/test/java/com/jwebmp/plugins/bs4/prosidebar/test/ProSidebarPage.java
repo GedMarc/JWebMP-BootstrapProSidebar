@@ -202,6 +202,8 @@ public class ProSidebarPage
 		                                        .add("Here are more themes that you can use")
 		                    )
 		          );
+
+
 	}
 
 	private void buildFooterSection(String imgUrl)
