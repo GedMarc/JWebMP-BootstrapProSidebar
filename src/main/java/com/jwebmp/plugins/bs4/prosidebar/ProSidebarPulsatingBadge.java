@@ -7,15 +7,9 @@ public class ProSidebarPulsatingBadge<J extends ProSidebarPulsatingBadge<J>>
 		extends BSBadge<J>
 {
 
-	public ProSidebarPulsatingBadge(boolean asPill, BSBadgeOptions... badgeOptions)
+	public ProSidebarPulsatingBadge()
 	{
-		super(asPill, badgeOptions);
-		setup();
-	}
-
-	public ProSidebarPulsatingBadge(String text, boolean asPill, BSBadgeOptions... badgeOptions)
-	{
-		super(text, asPill, badgeOptions);
+		super(false);
 		setup();
 	}
 

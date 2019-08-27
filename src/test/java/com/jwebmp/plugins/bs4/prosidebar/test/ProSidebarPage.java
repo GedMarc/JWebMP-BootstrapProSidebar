@@ -2,11 +2,13 @@ package com.jwebmp.plugins.bs4.prosidebar.test;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.base.html.*;
+import com.jwebmp.core.base.html.attributes.GlobalAttributes;
 import com.jwebmp.core.base.html.attributes.IFrameAttributes;
 import com.jwebmp.plugins.bootstrap4.badge.styles.BSBadgeSuccess;
 import com.jwebmp.plugins.bootstrap4.badge.styles.BSBadgeWarning;
 import com.jwebmp.plugins.bootstrap4.buttons.styles.BSButtonSecondary;
 import com.jwebmp.plugins.bootstrap4.buttons.styles.BSButtonSecondaryOutline;
+import com.jwebmp.plugins.bootstrap4.buttons.switches.BSCustomSwitchGroup;
 import com.jwebmp.plugins.bootstrap4.containers.BSRow;
 import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownLink;
 import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownMenu;
@@ -14,8 +16,12 @@ import com.jwebmp.plugins.bootstrap4.forms.groups.BSFormGroup;
 import com.jwebmp.plugins.bootstrap4.images.BSImage;
 import com.jwebmp.plugins.bs4.prosidebar.ProSidebar;
 import com.jwebmp.plugins.bs4.prosidebar.ProSidebarLayout;
+import com.jwebmp.plugins.bs4.prosidebar.ProSidebarPageConfigurator;
 import com.jwebmp.plugins.bs4.prosidebar.ProSidebarPulsatingBadge;
+import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
 import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarPinFeature;
+import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarSwitchBackgroundFeature;
+import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarSwitchThemeFeature;
 import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarToggleSidebarFeature;
 import com.jwebmp.plugins.bs4.prosidebar.parts.ProSidebarBrand;
 import com.jwebmp.plugins.bs4.prosidebar.parts.footer.ProSidebarFooter;
@@ -34,10 +40,14 @@ import com.jwebmp.plugins.malihu.enumerations.MalihuScrollbarAxis;
 import com.jwebmp.plugins.malihu.enumerations.MalihuScrollbarThemes;
 import com.jwebmp.plugins.malihu.options.MalihuScrollBarScrollButtonsOptions;
 
+import static com.jwebmp.plugins.bootstrap4.buttons.BSButtonOptions.*;
+import static com.jwebmp.plugins.bootstrap4.options.BSBackgroundOptions.*;
 import static com.jwebmp.plugins.bootstrap4.options.BSBorderOptions.*;
 import static com.jwebmp.plugins.bootstrap4.options.BSColoursOptions.*;
 import static com.jwebmp.plugins.bootstrap4.options.BSColumnOptions.*;
+import static com.jwebmp.plugins.bootstrap4.options.BSSpacingOptions.*;
 import static com.jwebmp.plugins.bs4.prosidebar.enumerations.ProSidebarDefaultThemes.*;
+import static com.jwebmp.plugins.fontawesome5.icons.FontAwesomeBrandIcons.*;
 import static com.jwebmp.plugins.fontawesome5.icons.FontAwesomeIcons.*;
 import static com.jwebmp.plugins.fontawesome5.options.FontAwesomeStyles.*;
 
@@ -189,19 +199,139 @@ public class ProSidebarPage
 		layout.add(new HorizontalRule());
 
 		buildThemesSection(layout);
+		buildBackgroundSection(layout);
+		buildSwitchOptions(layout);
+		buildThanksBar(layout);
 
 	}
 
 	private void buildThemesSection(ProSidebarLayout<?> layout)
 	{
-		layout.getMainContent()
-		      .getContainer()
-		      .add(BSRow.newInstance()
+		BSFormGroup<?, ?> themeSelection = new BSFormGroup<>().addClass(Col_Md_12);
+		themeSelection.addFeature(new ProSidebarSwitchThemeFeature<>(themeSelection));
+		for (IProSidebarTheme iProSidebarTheme : ProSidebarPageConfigurator.getAvailableThemes())
+		{
+			Link<?> link = new Link<>("#")
+					               .addAttribute("data-sidebar-theme", iProSidebarTheme.toString())
+					               .addClass("theme")
+					               .addClass(iProSidebarTheme.toString());
+			themeSelection.add(link);
+		}
+
+		layout.add(BSRow.newInstance()
 		                .add(new BSFormGroup<>().addClass(Col_Md_12)
 		                                        .add(new H3("Themes"))
 		                                        .add("Here are more themes that you can use")
 		                    )
+		                .add(themeSelection)
 		          );
+
+	}
+
+	private void buildBackgroundSection(ProSidebarLayout<?> layout)
+	{
+		BSFormGroup<?, ?> themeSelection = new BSFormGroup<>().addClass(Col_Md_12);
+		themeSelection.addFeature(new ProSidebarSwitchBackgroundFeature<>(themeSelection, "bg2"));
+		for (String iProSidebarTheme : ProSidebarPageConfigurator.getAvailableBackgrounds())
+		{
+			Link<?> link = new Link<>("#")
+					               .addAttribute("data-sidebar-bg", iProSidebarTheme.toString())
+					               .addClass("theme theme-bg")
+					               .addClass(iProSidebarTheme.toString());
+			themeSelection.add(link);
+		}
+
+		layout.add(BSRow.newInstance()
+		                .add(new BSFormGroup<>().addClass(Col_Md_12)
+		                                        .add(new H3("Backgrounds"))
+		                                        .add("You can also use background images")
+		                    )
+		                .add(themeSelection)
+		          );
+	}
+
+	private void buildSwitchOptions(ProSidebarLayout<?> layout)
+	{
+		BSCustomSwitchGroup<?> themeSelection = new BSCustomSwitchGroup<>().addClass(Col_Md_12)
+		                                                                   .addClass(Margin_Left_3);
+		themeSelection.getLabel()
+		              .setText("Background Image");
+
+		themeSelection.setCustomControl(true);
+
+		layout.add(BSRow.newInstance()
+		                .add(themeSelection)
+		          );
+
+		BSCustomSwitchGroup<?> borderRadius = new BSCustomSwitchGroup<>().addClass(Col_Md_12)
+		                                                                 .addClass(Margin_Left_3);
+		borderRadius.getLabel()
+		            .setText("Border Radius");
+
+		layout.add(BSRow.newInstance()
+		                .add(borderRadius)
+		          );
+	}
+
+	private void buildThanksBar(ProSidebarLayout<?> layout)
+	{
+		layout.add(HorizontalRule.getInstance());
+		layout.add(BSRow.newInstance()
+		                .add(new SmallText<>("Made with <i class=\"fa fa-heart text-danger\" aria-hidden=\"true\"></i> by <span\n" +
+		                                     "                                class=\"text-secondary font-weight-bold\">Mohamed\n" +
+		                                     "                                Azouaoui</span>").addClass(Col_Md_12)));
+
+		BSFormGroup<?, ?> group = new BSFormGroup<>().addClass(Col_Md_12);
+		Link<?> githubLink = new Link<>("https://github.com/azouaoui-med", "_blank")
+				                 .addClass(Btn)
+				                 .addClass(Btn_Sm)
+				                 .addClass(Bg_Secondary)
+				                 .addClass(Shadow_Sm)
+				                 .addClass(Rounded_0)
+				                 .addClass(Text_Light)
+				                 .addClass(Margin_Right_3)
+				                 .addClass(Margin_Bottom_3)
+				                 .add(FontAwesome.icon(github, Brand)
+				                                 .addAttribute(GlobalAttributes.Aria_Hidden, "true"));
+		Link<?> twitterLink = new Link<>("https://twitter.com/azouaoui_med", "_blank")
+				                     .addClass(Btn)
+				                     .addClass(Btn_Sm)
+				                     .addClass(Bg_Secondary)
+				                     .addClass(Shadow_Sm)
+				                     .addClass(Rounded_0)
+				                     .addClass(Text_Light)
+				                     .addClass(Margin_Right_3)
+				                     .addClass(Margin_Bottom_3)
+				                     .add(FontAwesome.icon(twitter, Brand)
+				                                     .addAttribute(GlobalAttributes.Aria_Hidden, "true"));
+		Link<?> instagramLink = new Link<>("https://www.instagram.com/azouaoui_med/", "_blank")
+				                      .addClass(Btn)
+				                      .addClass(Btn_Sm)
+				                      .addClass(Bg_Secondary)
+				                      .addClass(Shadow_Sm)
+				                      .addClass(Rounded_0)
+				                      .addClass(Text_Light)
+				                      .addClass(Margin_Right_3)
+				                      .addClass(Margin_Bottom_3)
+				                      .add(FontAwesome.icon(instagram, Brand)
+				                                      .addAttribute(GlobalAttributes.Aria_Hidden, "true"));
+		Link<?> linkedInLink = new Link<>("https://www.linkedin.com/in/mohamed-azouaoui/", "_blank")
+				                        .addClass(Btn)
+				                        .addClass(Btn_Sm)
+				                        .addClass(Bg_Secondary)
+				                        .addClass(Shadow_Sm)
+				                        .addClass(Rounded_0)
+				                        .addClass(Text_Light)
+				                        .addClass(Margin_Right_3)
+				                        .addClass(Margin_Bottom_3)
+				                        .add(FontAwesome.icon(linkedin_in, Brand)
+				                                        .addAttribute(GlobalAttributes.Aria_Hidden, "true"));
+
+		group.add(githubLink);
+		group.add(twitterLink);
+		group.add(instagramLink);
+		group.add(linkedInLink);
+		layout.add(BSRow.newInstance().add(group).addClass("mt-3"));
 	}
 
 	private void buildFooterSection(String imgUrl)
@@ -254,7 +384,7 @@ public class ProSidebarPage
 
 
 		footer.addDropDown(FontAwesome.icon(cog, Solid),
-		                   new ProSidebarPulsatingBadge<>(true),
+		                   new ProSidebarPulsatingBadge<>(),
 		                   new BSDropDownMenu<>()
 				                   .add(new BSDropDownLink<>("My Profile"))
 				                   .add(new BSDropDownLink<>("Help"))

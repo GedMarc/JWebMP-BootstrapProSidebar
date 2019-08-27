@@ -10,7 +10,7 @@ class ProSidebarPulsatingBadgeTest
 	@Test
 	void testSetColor()
 	{
-		ProSidebarPulsatingBadge tt = new ProSidebarPulsatingBadge("3", false);
+		ProSidebarPulsatingBadge tt = new ProSidebarPulsatingBadge();
 		tt.setColor("blue");
 		tt.setBorderColor("blue");
 

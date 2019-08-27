@@ -8,38 +8,12 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 public class ProSidebarSwitchBackgroundFeature<J extends ProSidebarSwitchBackgroundFeature<J>>
 		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
 {
-	private ComponentHierarchyBase pageWrapper;
-
 	private String backgroundImageClass;
 
-	public ProSidebarSwitchBackgroundFeature(ComponentHierarchyBase component, ComponentHierarchyBase pageWrapper, String initialBackgroundImage)
+	public ProSidebarSwitchBackgroundFeature(ComponentHierarchyBase component, String initialBackgroundImage)
 	{
 		super("ProSidebarSwitchBackgroundFeature", component);
-		this.pageWrapper = pageWrapper;
 		this.backgroundImageClass = initialBackgroundImage;
-		getComponent().addAttribute("prosidebar-data-bg", initialBackgroundImage);
-	}
-
-	/**
-	 * Getter for property 'pageWrapper'.
-	 *
-	 * @return Value for property 'pageWrapper'.
-	 */
-	public ComponentHierarchyBase getPageWrapper()
-	{
-		return pageWrapper;
-	}
-
-	/**
-	 * Setter for property 'pageWrapper'.
-	 *
-	 * @param pageWrapper
-	 * 		Value to set for property 'pageWrapper'.
-	 */
-	public ProSidebarSwitchBackgroundFeature<J> setPageWrapper(ComponentHierarchyBase pageWrapper)
-	{
-		this.pageWrapper = pageWrapper;
-		return this;
 	}
 
 	/**
@@ -68,16 +42,16 @@ public class ProSidebarSwitchBackgroundFeature<J extends ProSidebarSwitchBackgro
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + renderQuery());
+		addQuery(renderQuery());
 	}
 
 	private String renderQuery()
 	{
-		return "$('#" + getComponent().getID() + "[prosidebar-data-bg]').click(function () {" + getNewLine() +
-		       "        $('[prosidebar-data-bg]').removeClass(\"selected\");" + getNewLine() +
+		return "$('[data-sidebar-bg]').click(function () {" + getNewLine() +
+		       "        $('[data-sidebar-bg]').removeClass(\"selected\");" + getNewLine() +
 		       "        $(this).addClass(\"selected\");" + getNewLine() +
-		       "        $('#" + pageWrapper.getID() + "').removeClass(bgs);" + getNewLine() +
-		       "        $('#" + pageWrapper.getID() + "').addClass($(this).attr('prosidebar-data-bg'));" + getNewLine() +
+		       "        $('#pageWrapper').removeClass(bgs);" + getNewLine() +
+		       "        $('#pageWrapper').addClass($(this).attr('data-sidebar-bg'));" + getNewLine() +
 		       "    })";
 	}
 }

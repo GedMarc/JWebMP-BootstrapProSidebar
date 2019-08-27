@@ -74,7 +74,7 @@
     -webkit-transition: all .3s linear;
     transition: all .3s linear; }
   .sidebar-wrapper .sidebar-content {
-    max-height: calc(100% -35px);
+    max-height: calc(100% - 35px);
     height: calc(100% - 35px);
     overflow-y: scroll;
     position: relative; }
@@ -454,16 +454,16 @@ body {
 .sidebar-bg.bg4 .sidebar-wrapper {
   background-image: url(../img/bg4.jpg); }
 
-[data-bg="bg1"] {
+[data-sidebar-bg="bg1"] {
   background-image: url(../img/bg1.jpg); }
 
-[data-bg="bg2"] {
+[data-sidebar-bg="bg2"] {
   background-image: url(../img/bg2.jpg); }
 
-[data-bg="bg3"] {
+[data-sidebar-bg="bg3"] {
   background-image: url(../img/bg3.jpg); }
 
-[data-bg="bg4"] {
+[data-sidebar-bg="bg4"] {
   background-image: url(../img/bg4.jpg); }
 
 /*---- border-radius ------*/

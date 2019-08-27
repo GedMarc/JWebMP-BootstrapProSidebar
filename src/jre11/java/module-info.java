@@ -10,6 +10,7 @@ module com.jwebmp.plugins.bs4.prosidebar {
 	requires com.jwebmp.plugins.malihuscrollbar;
 
 	requires com.google.guice;
+	requires io.github.classgraph;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.bs4.prosidebar.ProSidebarPageConfigurator;
 }
