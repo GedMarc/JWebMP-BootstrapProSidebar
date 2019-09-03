@@ -331,7 +331,7 @@ public class ProSidebarPage
 		group.add(twitterLink);
 		group.add(instagramLink);
 		group.add(linkedInLink);
-		layout.add(BSRow.newInstance().add(group).addClass("mt-3"));
+		layout.add(BSRow.newInstance().add(group).addClass(Margin_Top_3));
 	}
 
 	private void buildFooterSection(String imgUrl)

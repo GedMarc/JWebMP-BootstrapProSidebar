@@ -7,6 +7,7 @@
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
+    <groupId>com.jwebmp.plugins.bootstrap</groupId>
     <artifactId>jwebmp-bootstrap-pro-sidebar</artifactId>
     <packaging>jar</packaging>
 
