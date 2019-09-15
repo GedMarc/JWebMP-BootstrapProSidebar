@@ -6,13 +6,9 @@ import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
 import com.jwebmp.plugins.bs4.prosidebar.enumerations.ProSidebarDefaultThemes;
 import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarDropdownMenuFeature;
-import com.jwebmp.plugins.bs4.prosidebar.features.ProSidebarToggleSidebarOverlayFeature;
 import com.jwebmp.plugins.bs4.prosidebar.parts.ProSidebarContent;
 import com.jwebmp.plugins.bs4.prosidebar.parts.footer.ProSidebarFooter;
 import com.jwebmp.plugins.malihu.MalihuScrollbarFeature;
-import com.jwebmp.plugins.malihu.enumerations.MalihuScrollbarAxis;
-import com.jwebmp.plugins.malihu.enumerations.MalihuScrollbarThemes;
-import com.jwebmp.plugins.malihu.options.MalihuScrollBarScrollButtonsOptions;
 
 import java.util.Objects;
 
@@ -79,10 +75,11 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param pageWrapper
 	 * 		Value to set for property 'pageWrapper'.
 	 */
-	public ProSidebar<J> setPageWrapper(ComponentHierarchyBase pageWrapper)
+	@SuppressWarnings("unchecked")
+	public J setPageWrapper(ComponentHierarchyBase pageWrapper)
 	{
 		this.pageWrapper = pageWrapper;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -101,10 +98,11 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param scrollbarFeature
 	 * 		Value to set for property 'scrollbarFeature'.
 	 */
-	public ProSidebar<J> setScrollbarFeature(MalihuScrollbarFeature<?> scrollbarFeature)
+	@SuppressWarnings("unchecked")
+	public J setScrollbarFeature(MalihuScrollbarFeature<?> scrollbarFeature)
 	{
 		this.scrollbarFeature = scrollbarFeature;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -123,12 +121,13 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param theme
 	 * 		Value to set for property 'theme'.
 	 */
-	public ProSidebar<J> setTheme(IProSidebarTheme<?> theme)
+	@SuppressWarnings("unchecked")
+	public J setTheme(IProSidebarTheme<?> theme)
 	{
 		pageWrapper.removeClass(theme.toString());
 		this.theme = theme;
 		pageWrapper.addClass(theme.toString());
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -147,7 +146,8 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param showBackground
 	 * 		Value to set for property 'showBackground'.
 	 */
-	public ProSidebar<J> setShowBackground(boolean showBackground)
+	@SuppressWarnings("unchecked")
+	public J setShowBackground(boolean showBackground)
 	{
 		this.showBackground = showBackground;
 		if (showBackground)
@@ -158,7 +158,7 @@ public class ProSidebar<J extends ProSidebar<J>>
 		{
 			pageWrapper.removeClass("sidebar-bg");
 		}
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -177,14 +177,15 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param cssBackgroundClass
 	 * 		Value to set for property 'cssBackgroundClass'.
 	 */
-	public ProSidebar<J> setCssBackgroundClass(String cssBackgroundClass)
+	@SuppressWarnings("unchecked")
+	public J setCssBackgroundClass(String cssBackgroundClass)
 	{
 		this.cssBackgroundClass = cssBackgroundClass;
 		if (Objects.nonNull(cssBackgroundClass))
 		{
 			pageWrapper.addClass(cssBackgroundClass);
 		}
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -203,7 +204,8 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param shown
 	 * 		Value to set for property 'shown'.
 	 */
-	public ProSidebar<J> setShown(boolean shown)
+	@SuppressWarnings("unchecked")
+	public J setShown(boolean shown)
 	{
 		this.shown = shown;
 		if (shown)
@@ -214,10 +216,8 @@ public class ProSidebar<J extends ProSidebar<J>>
 		{
 			pageWrapper.removeClass("toggled");
 		}
-		return this;
+		return (J) this;
 	}
-
-
 
 	/**
 	 * Getter for property 'content'.
@@ -235,10 +235,11 @@ public class ProSidebar<J extends ProSidebar<J>>
 	 * @param content
 	 * 		Value to set for property 'content'.
 	 */
-	public ProSidebar<J> setContent(ProSidebarContent<?> content)
+	@SuppressWarnings("unchecked")
+	public J setContent(ProSidebarContent<?> content)
 	{
 		this.content = content;
-		return this;
+		return (J) this;
 	}
 
 	/**
@@ -254,11 +255,13 @@ public class ProSidebar<J extends ProSidebar<J>>
 	/**
 	 * Setter for property 'footer'.
 	 *
-	 * @param footer Value to set for property 'footer'.
+	 * @param footer
+	 * 		Value to set for property 'footer'.
 	 */
-	public ProSidebar<J> setFooter(ProSidebarFooter<?> footer)
+	@SuppressWarnings("unchecked")
+	public J setFooter(ProSidebarFooter<?> footer)
 	{
 		this.footer = footer;
-		return this;
+		return (J) this;
 	}
 }

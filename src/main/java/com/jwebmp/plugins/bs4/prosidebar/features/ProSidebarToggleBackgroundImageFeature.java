@@ -26,7 +26,7 @@ public class ProSidebarToggleBackgroundImageFeature<J extends ProSidebarToggleBa
 	{
 		return "click(function (e) {" + getNewLine() +
 		       "e.preventDefault();" + getNewLine() +
-		       "$('" + pageWrapper.getID(true) + "').toggleClass(\"sidebar-bg\");" + getNewLine() +
+		       "$('" + pageWrapper.getID(true) + "').toggleClass('sidebar-bg');" + getNewLine() +
 		       "});";
 	}
 }

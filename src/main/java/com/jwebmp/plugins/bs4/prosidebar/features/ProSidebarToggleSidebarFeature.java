@@ -26,7 +26,7 @@ public class ProSidebarToggleSidebarFeature<J extends ProSidebarToggleSidebarFea
 	private String renderQuery()
 	{
 		return "click(function () {" + getNewLine() +
-		       " $('" + pageWrapper.getID(true) + "').toggleClass(\"toggled\");" + getNewLine() +
+		       " $('" + pageWrapper.getID(true) + "').toggleClass('toggled');" + getNewLine() +
 		       "});";
 	}
 }

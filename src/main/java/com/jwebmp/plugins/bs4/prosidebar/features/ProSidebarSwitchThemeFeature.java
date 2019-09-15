@@ -4,7 +4,6 @@ import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
-import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
 
 public class ProSidebarSwitchThemeFeature<J extends ProSidebarSwitchThemeFeature<J>>
 		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
@@ -23,11 +22,11 @@ public class ProSidebarSwitchThemeFeature<J extends ProSidebarSwitchThemeFeature
 
 	private String renderQuery()
 	{
-		return "$('[data-sidebar-theme]').click(function () {\n" +
-		       "        $('[data-sidebar-theme]').removeClass(\"selected\");\n" +
-		       "        $(this).addClass(\"selected\");\n" +
-		       "        $('.page-wrapper').removeClass(sidebar_themes);\n" +
-		       "        $('.page-wrapper').addClass($(this).attr('data-sidebar-theme'));\n" +
-		       "    });";
+		return "$('[data-sidebar-theme]').click(function () {" + getNewLine() +
+		       "        $('[data-sidebar-theme]').removeClass('selected');" + getNewLine() +
+		       "        $(this).addClass('selected');" + getNewLine() +
+		       "        $('.page-wrapper').removeClass(sidebar_themes);" + getNewLine() +
+		       "        $('.page-wrapper').addClass($(this).attr('data-sidebar-theme'));" + getNewLine() +
+		       "    })" + getNewLine();
 	}
 }

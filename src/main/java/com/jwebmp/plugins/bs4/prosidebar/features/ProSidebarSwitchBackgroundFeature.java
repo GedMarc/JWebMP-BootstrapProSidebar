@@ -48,10 +48,10 @@ public class ProSidebarSwitchBackgroundFeature<J extends ProSidebarSwitchBackgro
 	private String renderQuery()
 	{
 		return "$('[data-sidebar-bg]').click(function () {" + getNewLine() +
-		       "        $('[data-sidebar-bg]').removeClass(\"selected\");" + getNewLine() +
-		       "        $(this).addClass(\"selected\");" + getNewLine() +
+		       "        $('[data-sidebar-bg]').removeClass('selected');" + getNewLine() +
+		       "        $(this).addClass('selected');" + getNewLine() +
 		       "        $('#pageWrapper').removeClass(bgs);" + getNewLine() +
 		       "        $('#pageWrapper').addClass($(this).attr('data-sidebar-bg'));" + getNewLine() +
-		       "    })";
+		       "    });" + getNewLine();
 	}
 }

@@ -25,7 +25,7 @@ public class ProSidebarToggleBorderRadiusFeature<J extends ProSidebarToggleBorde
 	private String renderQuery()
 	{
 		return "click(function () {" + getNewLine() +
-		       " $('" + pageWrapper.getID(true) + "').toggleClass(\"boder-radius-on\");" + getNewLine() +
+		       " $('" + pageWrapper.getID(true) + "').toggleClass('boder-radius-on');" + getNewLine() +
 		       "});";
 	}
 }

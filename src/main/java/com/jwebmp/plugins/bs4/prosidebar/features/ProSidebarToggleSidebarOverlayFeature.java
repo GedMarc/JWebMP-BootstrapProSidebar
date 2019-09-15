@@ -24,7 +24,7 @@ public class ProSidebarToggleSidebarOverlayFeature<J extends ProSidebarToggleSid
 	{
 		return "click(function () {" + getNewLine() +
 		       " $('.page-wrapper')" +
-		       ".toggleClass(\"toggled\");" + getNewLine() +
+		       ".toggleClass('toggled');" + getNewLine() +
 		       "});" + getNewLine();
 	}
 }

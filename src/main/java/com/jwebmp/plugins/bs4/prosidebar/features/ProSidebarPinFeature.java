@@ -27,20 +27,17 @@ public class ProSidebarPinFeature<J extends ProSidebarPinFeature<J>>
 	private String renderQuery()
 	{
 		return "click(function () {" + getNewLine() +
-		       "        if ($(\"#pageWrapper\").hasClass(\"pinned\")) {" + getNewLine() +
-		       "            // unpin sidebar when hovered" + getNewLine() +
-		       "            $(\"#pageWrapper\").removeClass(\"pinned\");" + getNewLine() +
-		       "            $(\"" + sidebar.getID(true) + "\").unbind( \"hover\");" + getNewLine() +
+		       "        if ($('#pageWrapper').hasClass('pinned')) {" + getNewLine() +
+		       "            $('#pageWrapper').removeClass('pinned');" + getNewLine() +
+		       "            $('" + sidebar.getID(true) + "').unbind( 'hover');" + getNewLine() +
 		       "        } else {" + getNewLine() +
-		       "            $(\"#pageWrapper\").addClass(\"pinned\");" + getNewLine() +
-		       "            $(\"" + sidebar.getID(true) + "\").hover(" + getNewLine() +
+		       "            $('#pageWrapper').addClass('pinned');" + getNewLine() +
+		       "            $('" + sidebar.getID(true) + "').hover(" + getNewLine() +
 		       "                function () {" + getNewLine() +
-		       "                    //console.log(\"mouseenter\");" + getNewLine() +
-		       "                    $(\"#pageWrapper\").addClass(\"sidebar-hovered\");" + getNewLine() +
+		       "                    $('#pageWrapper').addClass('sidebar-hovered');" + getNewLine() +
 		       "                }," + getNewLine() +
 		       "                function () {" + getNewLine() +
-		       "                    //console.log(\"mouseout \");" + getNewLine() +
-		       "                    $(\"#pageWrapper\").removeClass(\"sidebar-hovered\");" + getNewLine() +
+		       "                    $('#pageWrapper').removeClass('sidebar-hovered');" + getNewLine() +
 		       "                }" + getNewLine() +
 		       "            )" + getNewLine() +
 		       "        }" + getNewLine() +
