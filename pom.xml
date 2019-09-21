@@ -7,12 +7,11 @@
         <version>0.0.0_0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.jwebmp.plugins.bootstrap</groupId>
     <artifactId>jwebmp-bootstrap-pro-sidebar</artifactId>
     <packaging>jar</packaging>
 
-    <name>Component Template</name>
-    <description>The JWebMP Implementation for a new basic compoennt</description>
+    <name>Bootstrap Pro Sidebar</name>
+    <description>The JWebMP Implementation for A Bootstrap Pro Sidebar</description>
     <url>https://github.com/GedMarc/JWebMP-BootstrapProSidebar</url>
 
     <issueManagement>
