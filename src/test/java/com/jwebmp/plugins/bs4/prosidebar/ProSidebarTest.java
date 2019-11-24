@@ -1,11 +1,11 @@
 package com.jwebmp.plugins.bs4.prosidebar;
 
+import com.guicedee.guicedservlets.undertow.GuicedUndertow;
 import com.jwebmp.core.Page;
 import com.jwebmp.core.base.html.DivSimple;
 import com.guicedee.logger.LogFactory;
 import com.jwebmp.plugins.fontawesome5.config.FontAwesome5PageConfigurator;
 import com.jwebmp.plugins.fontawesome5.config.FontAwesomeReferenceType;
-import com.jwebmp.undertow.GuicedUndertow;
 import org.junit.jupiter.api.Test;
 
 import java.util.logging.Level;
