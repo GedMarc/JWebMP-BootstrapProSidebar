@@ -18,5 +18,12 @@ module com.jwebmp.plugins.bs4.prosidebar {
 	requires com.google.guice;
 	requires io.github.classgraph;
 
+	opens com.jwebmp.plugins.bs4.prosidebar to com.jwebmp.core,com.google.guice;
+	opens com.jwebmp.plugins.bs4.prosidebar.parts to com.jwebmp.core,com.google.guice;
+	opens com.jwebmp.plugins.bs4.prosidebar.parts.search to com.jwebmp.core,com.google.guice;
+	opens com.jwebmp.plugins.bs4.prosidebar.parts.menu to com.jwebmp.core,com.google.guice;
+	opens com.jwebmp.plugins.bs4.prosidebar.parts.header to com.jwebmp.core,com.google.guice;
+	opens com.jwebmp.plugins.bs4.prosidebar.parts.footer to com.jwebmp.core,com.google.guice;
+
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.bs4.prosidebar.ProSidebarPageConfigurator;
 }
