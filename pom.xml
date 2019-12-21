@@ -47,7 +47,7 @@
             <groupId>com.guicedee</groupId>
             <artifactId>guiced-undertow</artifactId>
             <scope>test</scope>
-            <version>${guicedee.version}</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
