@@ -124,9 +124,15 @@ public class ProSidebar<J extends ProSidebar<J>>
 	@SuppressWarnings("unchecked")
 	public J setTheme(IProSidebarTheme<?> theme)
 	{
-		pageWrapper.removeClass(theme.toString());
+		if (pageWrapper != null)
+		{
+			pageWrapper.removeClass(theme.toString());
+		}
 		this.theme = theme;
-		pageWrapper.addClass(theme.toString());
+		if (pageWrapper != null)
+		{
+			pageWrapper.addClass(theme.toString());
+		}
 		return (J) this;
 	}
 
@@ -152,11 +158,17 @@ public class ProSidebar<J extends ProSidebar<J>>
 		this.showBackground = showBackground;
 		if (showBackground)
 		{
-			pageWrapper.addClass("sidebar-bg");
+			if (pageWrapper != null)
+			{
+				pageWrapper.addClass("sidebar-bg");
+			}
 		}
 		else
 		{
-			pageWrapper.removeClass("sidebar-bg");
+			if (pageWrapper != null)
+			{
+				pageWrapper.removeClass("sidebar-bg");
+			}
 		}
 		return (J) this;
 	}
@@ -183,7 +195,10 @@ public class ProSidebar<J extends ProSidebar<J>>
 		this.cssBackgroundClass = cssBackgroundClass;
 		if (Objects.nonNull(cssBackgroundClass))
 		{
-			pageWrapper.addClass(cssBackgroundClass);
+			if (pageWrapper != null)
+			{
+				pageWrapper.addClass(cssBackgroundClass);
+			}
 		}
 		return (J) this;
 	}
@@ -210,11 +225,17 @@ public class ProSidebar<J extends ProSidebar<J>>
 		this.shown = shown;
 		if (shown)
 		{
-			pageWrapper.addClass("toggled");
+			if (pageWrapper != null)
+			{
+				pageWrapper.addClass("toggled");
+			}
 		}
 		else
 		{
-			pageWrapper.removeClass("toggled");
+			if (pageWrapper != null)
+			{
+				pageWrapper.removeClass("toggled");
+			}
 		}
 		return (J) this;
 	}
