@@ -4,11 +4,11 @@
   "description": "Responsive sidebar template with dropdown menu based on bootstrap framwork",
   "main": "index.js",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "bootstrap": "^4.4.1",
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "bootstrap": "^4.3.1",
     "jquery": "^3.5.0",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.15.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.5",
