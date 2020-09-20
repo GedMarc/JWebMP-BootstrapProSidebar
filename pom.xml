@@ -23,24 +23,20 @@
         <dependency>
             <groupId>com.jwebmp.core</groupId>
             <artifactId>jwebmp-core</artifactId>
-            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>com.jwebmp.plugins.bootstrap</groupId>
             <artifactId>jwebmp-bootstrap</artifactId>
-            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.plugins.angular</groupId>
             <artifactId>jwebmp-plugins-angularjs</artifactId>
-            <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>com.jwebmp.plugins.jquery</groupId>
             <artifactId>malihu-custom-scrollbar</artifactId>
-            <type>jar</type>
         </dependency>
 
         <dependency>
@@ -54,7 +50,6 @@
             <groupId>com.jwebmp.plugins.iconsets</groupId>
             <artifactId>jwebmp-font-awesome5</artifactId>
             <scope>test</scope>
-            <type>jar</type>
         </dependency>
     </dependencies>
     <scm>
