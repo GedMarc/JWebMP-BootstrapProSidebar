@@ -1,0 +1,14 @@
+{
+  "name": "bootstrapprosidebar",
+  "homepage": "https://github.com/azouaoui-med/pro-sidebar-template",
+  "version": "3.0.3",
+  "_release": "3.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.3",
+    "commit": "013afd5db43cb2e7cdca56ccc80e77792508befb"
+  },
+  "_source": "https://github.com/azouaoui-med/pro-sidebar-template.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/azouaoui-med/pro-sidebar-template.git"
+}
