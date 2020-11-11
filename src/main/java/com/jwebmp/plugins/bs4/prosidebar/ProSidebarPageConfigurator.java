@@ -8,7 +8,7 @@ import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.ClassInfo;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.Set;
 import java.util.TreeSet;
 

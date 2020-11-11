@@ -6,7 +6,7 @@ import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.interfaces.IIcon;
 import com.jwebmp.plugins.bootstrap4.forms.groups.sets.BSFormInputGroup;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class ProSidebarSearch<J extends ProSidebarSearch<J>>
 		extends DivSimple<J>

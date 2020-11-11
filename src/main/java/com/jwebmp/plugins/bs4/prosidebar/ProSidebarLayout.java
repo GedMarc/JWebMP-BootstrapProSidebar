@@ -3,7 +3,7 @@ package com.jwebmp.plugins.bs4.prosidebar;
 import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public class ProSidebarLayout<J extends ProSidebarLayout<J>>
 		extends DivSimple<J>
