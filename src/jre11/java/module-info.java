@@ -10,7 +10,7 @@ module com.jwebmp.plugins.bs4.prosidebar {
 	exports com.jwebmp.plugins.bs4.prosidebar.features;
 
 	requires com.jwebmp.core;
-	requires java.validation;
+	requires jakarta.validation;
 
 	requires transitive com.jwebmp.plugins.bootstrap4;
 	requires transitive com.jwebmp.plugins.malihuscrollbar;
