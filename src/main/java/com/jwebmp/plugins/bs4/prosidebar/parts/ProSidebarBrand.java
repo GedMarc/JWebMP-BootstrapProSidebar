@@ -51,7 +51,7 @@ public class ProSidebarBrand<J extends ProSidebarBrand<J>>
 	 * @return Whatever should be returned
 	 */
 	@SuppressWarnings("unchecked")
-	public J addIcon(IIcon<?> icon, boolean frontOrBack)
+	public J addIcon(IIcon<?,?> icon, boolean frontOrBack)
 	{
 		if (frontOrBack)
 		{

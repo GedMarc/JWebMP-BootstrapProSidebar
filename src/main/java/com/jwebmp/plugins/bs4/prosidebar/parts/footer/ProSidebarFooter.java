@@ -27,7 +27,7 @@ public class ProSidebarFooter<J extends ProSidebarFooter<J>>
 		return (J) this;
 	}
 
-	public J addNotificationStyleButton(IIcon<?> buttonIcon, BSBadge<?> buttonBadge, IIcon<?> headerIcon, String headerText,
+	public J addNotificationStyleButton(IIcon<?,?> buttonIcon, BSBadge<?> buttonBadge, IIcon<?,?> headerIcon, String headerText,
 	                                    String viewAllText, Event<?, ?> viewAllEvent,
 	                                    ProSidebarFooterCheckedItem... items)
 	{
@@ -36,7 +36,7 @@ public class ProSidebarFooter<J extends ProSidebarFooter<J>>
 		footerNotificationsDropDown.setIcon(buttonIcon);
 		footerNotificationsDropDown.setBadge(buttonBadge);
 
-		ProSidebarFooterNotificationsMenu<?> footerNotificationsMenu = footerNotificationsDropDown.addDropDownNotificationsMenu();
+		ProSidebarFooterNotificationsMenu<?> footerNotificationsMenu = footerNotificationsDropDown.addDropDownMenu();
 		if (headerIcon != null || headerText != null)
 		{
 			footerNotificationsMenu.addHeader(headerIcon, headerText);
@@ -61,7 +61,7 @@ public class ProSidebarFooter<J extends ProSidebarFooter<J>>
 	}
 
 
-	public J addMessagesStyleButton(IIcon<?> buttonIcon, BSBadge<?> buttonBadge, IIcon<?> headerIcon, String headerText,
+	public J addMessagesStyleButton(IIcon<?,?> buttonIcon, BSBadge<?> buttonBadge, IIcon<?,?> headerIcon, String headerText,
 	                                String viewAllText, Event<?, ?> viewAllEvent,
 	                                ProSidebarFooterLabelledItem... items)
 	{
@@ -96,7 +96,7 @@ public class ProSidebarFooter<J extends ProSidebarFooter<J>>
 		return (J) this;
 	}
 
-	public J addDropDown(IIcon<?> buttonIcon, BSBadge<?> buttonBadge,
+	public J addDropDown(IIcon<?,?> buttonIcon, BSBadge<?> buttonBadge,
 	                     BSDropDownMenu<?> dropDownMenu)
 	{
 		ProSidebarFooterMessagesDropDown<?> footerMessagesDropDown = new ProSidebarFooterMessagesDropDown<>();
@@ -115,7 +115,7 @@ public class ProSidebarFooter<J extends ProSidebarFooter<J>>
 
 	}
 
-	public J addButton(IIcon<?> buttonIcon, BSBadge<?> buttonBadge, Event<?, ?>... event)
+	public J addButton(IIcon<?,?> buttonIcon, BSBadge<?> buttonBadge, Event<?, ?>... event)
 	{
 		DivSimple<?> div = new DivSimple<>();
 		Link<?> link = new Link<>("#");

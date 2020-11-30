@@ -12,5 +12,5 @@ public interface IProSidebarHeaderUserStatus<C extends IComponentHierarchyBase, 
 		extends Comparator<J>, Comparable<J>,
 				        ICssStructure<J>
 {
-	J addStatus(IIcon<?> icon, String status, String colour);
+	J addStatus(IIcon<?,?> icon, String status, String colour);
 }

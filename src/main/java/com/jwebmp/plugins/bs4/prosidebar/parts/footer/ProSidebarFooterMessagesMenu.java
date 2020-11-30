@@ -19,7 +19,7 @@ public class ProSidebarFooterMessagesMenu<J extends ProSidebarFooterMessagesMenu
 	}
 
 	@SuppressWarnings("unchecked")
-	public J addHeader(IIcon<?> icon, String text)
+	public J addHeader(IIcon<?,?> icon, String text)
 	{
 		DivSimple<?> div = new DivSimple<>();
 		div.addClass("messages-header");

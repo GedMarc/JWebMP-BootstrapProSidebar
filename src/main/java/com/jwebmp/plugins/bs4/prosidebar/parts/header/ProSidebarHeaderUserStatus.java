@@ -20,7 +20,7 @@ public class ProSidebarHeaderUserStatus<C extends IComponentHierarchyBase, A ext
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public J addStatus(IIcon<?> icon, String status, String colour)
+	public J addStatus(IIcon<?,?> icon, String status, String colour)
 	{
 		ComponentHierarchyBase c = icon.getIconComponent();
 		if (colour != null)

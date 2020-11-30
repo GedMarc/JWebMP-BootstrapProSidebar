@@ -19,21 +19,21 @@ public class ProSidebarFooterCheckedItem<J extends ProSidebarFooterCheckedItem<J
 
 	private String notificationDetail;
 	private String timeAgo;
-	private IIcon<?> checkIcon;
+	private IIcon<?,?> checkIcon;
 
 	public ProSidebarFooterCheckedItem()
 	{
 		//No config required
 	}
 
-	public ProSidebarFooterCheckedItem(String notificationDetail, String timeAgo, IIcon<?> checkIcon)
+	public ProSidebarFooterCheckedItem(String notificationDetail, String timeAgo, IIcon<?,?> checkIcon)
 	{
 		this.notificationDetail = notificationDetail;
 		this.timeAgo = timeAgo;
 		this.checkIcon = checkIcon;
 	}
 
-	public ProSidebarFooterCheckedItem(String notificationDetail, ComponentHierarchyBase timeAgo, IIcon<?> checkIcon)
+	public ProSidebarFooterCheckedItem(String notificationDetail, ComponentHierarchyBase timeAgo, IIcon<?,?> checkIcon)
 	{
 		this.notificationDetail = notificationDetail;
 		this.timeAgo = timeAgo.setTiny(true)
@@ -235,7 +235,7 @@ public class ProSidebarFooterCheckedItem<J extends ProSidebarFooterCheckedItem<J
 	 *
 	 * @return Value for property 'checkIcon'.
 	 */
-	public IIcon<?> getCheckIcon()
+	public IIcon<?,?> getCheckIcon()
 	{
 		return checkIcon;
 	}
@@ -247,7 +247,7 @@ public class ProSidebarFooterCheckedItem<J extends ProSidebarFooterCheckedItem<J
 	 * 		Value to set for property 'checkIcon'.
 	 */
 	@SuppressWarnings("unchecked")
-	public J setCheckIcon(IIcon<?> checkIcon)
+	public J setCheckIcon(IIcon<?,?> checkIcon)
 	{
 		this.checkIcon = checkIcon;
 		return (J) this;

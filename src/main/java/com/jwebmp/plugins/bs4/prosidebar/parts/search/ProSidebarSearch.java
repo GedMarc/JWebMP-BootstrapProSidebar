@@ -15,7 +15,7 @@ public class ProSidebarSearch<J extends ProSidebarSearch<J>>
 	private BSFormInputGroup<?, InputSearchType<?>> inputGroup;
 
 	private String placeHolder;
-	private IIcon<?> icon;
+	private IIcon<?,?> icon;
 
 	public ProSidebarSearch()
 	{
@@ -87,7 +87,7 @@ public class ProSidebarSearch<J extends ProSidebarSearch<J>>
 	 * @param icon
 	 * 		The icon to use
 	 */
-	public ProSidebarSearch<J> appendIcon(IIcon<?> icon)
+	public ProSidebarSearch<J> appendIcon(IIcon<?,?> icon)
 	{
 		if (icon != null)
 		{
@@ -102,7 +102,7 @@ public class ProSidebarSearch<J extends ProSidebarSearch<J>>
 	 * @param icon
 	 * 		The icon to use
 	 */
-	public ProSidebarSearch<J> prependIcon(IIcon<?> icon)
+	public ProSidebarSearch<J> prependIcon(IIcon<?,?> icon)
 	{
 		if (icon != null)
 		{

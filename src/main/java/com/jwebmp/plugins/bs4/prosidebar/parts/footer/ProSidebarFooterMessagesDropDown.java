@@ -12,7 +12,7 @@ import static com.jwebmp.core.base.html.attributes.LinkAttributes.*;
 public class ProSidebarFooterMessagesDropDown<J extends ProSidebarFooterMessagesDropDown<J>>
 		extends BSDropDown<J>
 {
-	private IIcon<?> icon;
+	private IIcon<?,?> icon;
 	private Link<?> dropDownLink = new Link<>("#");
 	private BSBadge<?> badge;
 
@@ -53,7 +53,7 @@ public class ProSidebarFooterMessagesDropDown<J extends ProSidebarFooterMessages
 	 *
 	 * @return Value for property 'icon'.
 	 */
-	public IIcon<?> getIcon()
+	public IIcon<?,?> getIcon()
 	{
 		return icon;
 	}
@@ -65,7 +65,7 @@ public class ProSidebarFooterMessagesDropDown<J extends ProSidebarFooterMessages
 	 * 		Value to set for property 'icon'.
 	 */
 	@SuppressWarnings("unchecked")
-	public J setIcon(IIcon<?> icon)
+	public J setIcon(IIcon<?,?> icon)
 	{
 		this.icon = icon;
 		return (J) this;

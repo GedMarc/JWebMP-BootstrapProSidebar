@@ -24,7 +24,7 @@ public class ProSidebarMenuList<C extends ListChildren, A extends Enum & Attribu
 	}
 
 	@SuppressWarnings("unchecked")
-	public J addHeaderMenu(String headerMenuText, IIcon<?> icon)
+	public J addHeaderMenu(String headerMenuText, IIcon<?,?> icon)
 	{
 		ListItem<?> li = new ListItem<>().addClass("header-menu");
 		Span span = new Span();

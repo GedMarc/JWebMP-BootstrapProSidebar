@@ -7,7 +7,7 @@ import com.jwebmp.core.base.interfaces.IIcon;
 public class ProSidebarFooterPinnedBottom<J extends ProSidebarFooterPinnedBottom<J>>
 		extends DivSimple<J>
 {
-	private IIcon<?> icon;
+	private IIcon<?,?> icon;
 	private Link<?> link = new Link<>("#");
 
 	public ProSidebarFooterPinnedBottom()
@@ -20,7 +20,7 @@ public class ProSidebarFooterPinnedBottom<J extends ProSidebarFooterPinnedBottom
 	 *
 	 * @return Value for property 'icon'.
 	 */
-	public IIcon<?> getIcon()
+	public IIcon<?,?> getIcon()
 	{
 		return icon;
 	}
@@ -31,7 +31,7 @@ public class ProSidebarFooterPinnedBottom<J extends ProSidebarFooterPinnedBottom
 	 * @param icon
 	 * 		Value to set for property 'icon'.
 	 */
-	public ProSidebarFooterPinnedBottom<J> setIcon(IIcon<?> icon)
+	public ProSidebarFooterPinnedBottom<J> setIcon(IIcon<?,?> icon)
 	{
 		this.icon = icon;
 		return this;

@@ -13,7 +13,7 @@ public class ProSidebarMenuListItem<J extends ProSidebarMenuListItem<J>>
 {
 	private final Link<?> link = new Link<>("#");
 
-	private IIcon<?> icon;
+	private IIcon<?,?> icon;
 	private String text;
 	private BSBadge<?> badge;
 
@@ -60,7 +60,7 @@ public class ProSidebarMenuListItem<J extends ProSidebarMenuListItem<J>>
 	 *
 	 * @return Value for property 'icon'.
 	 */
-	public IIcon<?> getIcon()
+	public IIcon<?,?> getIcon()
 	{
 		return icon;
 	}
@@ -71,7 +71,7 @@ public class ProSidebarMenuListItem<J extends ProSidebarMenuListItem<J>>
 	 * @param icon
 	 * 		Value to set for property 'icon'.
 	 */
-	public J setIcon(IIcon<?> icon)
+	public J setIcon(IIcon<?,?> icon)
 	{
 		this.icon = icon;
 		return (J) this;

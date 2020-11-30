@@ -12,7 +12,7 @@ public class ProSidebarMenuDropdownItem<J extends ProSidebarMenuDropdownItem<J>>
 {
 	private final Link<?> link = new Link<>("#");
 
-	private IIcon<?> icon;
+	private IIcon<?,?> icon;
 	private String text;
 	private BSBadge<?> badge;
 
@@ -60,7 +60,7 @@ public class ProSidebarMenuDropdownItem<J extends ProSidebarMenuDropdownItem<J>>
 	 *
 	 * @return Value for property 'icon'.
 	 */
-	public IIcon<?> getIcon()
+	public IIcon<?,?> getIcon()
 	{
 		return icon;
 	}
@@ -71,7 +71,7 @@ public class ProSidebarMenuDropdownItem<J extends ProSidebarMenuDropdownItem<J>>
 	 * @param icon
 	 * 		Value to set for property 'icon'.
 	 */
-	public J setIcon(IIcon<?> icon)
+	public J setIcon(IIcon<?,?> icon)
 	{
 		this.icon = icon;
 		return (J) this;
@@ -135,7 +135,7 @@ public class ProSidebarMenuDropdownItem<J extends ProSidebarMenuDropdownItem<J>>
 			add(list);
 		}
 
-		public J addSubItem(String label, BSBadge<?> badge, IIcon<?> icon, Event<?, ?> clickEvent)
+		public J addSubItem(String label, BSBadge<?> badge, IIcon<?,?> icon, Event<?, ?> clickEvent)
 		{
 			ListItem<?> li = new ListItem<>();
 			Link<?> link = new Link<>("#").setText(label)

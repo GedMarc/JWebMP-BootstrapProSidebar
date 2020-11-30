@@ -20,7 +20,7 @@ class ProSidebarFooterTest
 		footer.setIcon(FontAwesome.icon(circle, Solid));
 		footer.setBadge(new BSBadgeWarning<>(true).setText("3"));
 
-		ProSidebarFooterNotificationsMenu<?> menu = footer.addDropDownNotificationsMenu();
+		ProSidebarFooterNotificationsMenu<?> menu = footer.addDropDownMenu();
 
 		menu.addHeader(FontAwesome.icon(bell, Solid), "Notifications");
 		menu.addDivider();

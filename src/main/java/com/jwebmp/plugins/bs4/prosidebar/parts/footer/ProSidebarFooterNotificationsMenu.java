@@ -19,7 +19,7 @@ public class ProSidebarFooterNotificationsMenu<J extends ProSidebarFooterNotific
 
 
 	@SuppressWarnings("unchecked")
-	public J addHeader(IIcon<?> icon, String text)
+	public J addHeader(IIcon<?,?> icon, String text)
 	{
 		DivSimple<?> div = new DivSimple<>();
 		div.addClass("notifications-header");
@@ -34,7 +34,7 @@ public class ProSidebarFooterNotificationsMenu<J extends ProSidebarFooterNotific
 		return (J) this;
 	}
 
-	public J addItem(String notificationDetail, String timeAgo, IIcon<?> checkIcon, Event<?, ?>... events)
+	public J addItem(String notificationDetail, String timeAgo, IIcon<?,?> checkIcon, Event<?, ?>... events)
 	{
 		ProSidebarFooterCheckedItem<?> item = new ProSidebarFooterCheckedItem<>(notificationDetail, timeAgo, checkIcon);
 		for (Event<?, ?> event : events)

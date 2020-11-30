@@ -37,7 +37,7 @@ public class ProSidebarHeaderUserInfo<J extends ProSidebarHeaderUserInfo<J>>
 	}
 
 	@SuppressWarnings("unchecked")
-	public J setUserStatus(IIcon<?> icon, String status, String colour)
+	public J setUserStatus(IIcon<?,?> icon, String status, String colour)
 	{
 		this.status.addStatus(icon, status, colour);
 		return (J)this;
