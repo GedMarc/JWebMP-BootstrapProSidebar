@@ -9,6 +9,7 @@ import com.jwebmp.plugins.bootstrap4.badge.styles.BSBadgeWarning;
 import com.jwebmp.plugins.bootstrap4.buttons.styles.BSButtonSecondary;
 import com.jwebmp.plugins.bootstrap4.buttons.styles.BSButtonSecondaryOutline;
 import com.jwebmp.plugins.bootstrap4.buttons.switches.BSCustomSwitchGroup;
+import com.jwebmp.plugins.bootstrap4.containers.BSColumn;
 import com.jwebmp.plugins.bootstrap4.containers.BSRow;
 import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownLink;
 import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownMenu;
@@ -277,10 +278,11 @@ public class ProSidebarPage
 	{
 		layout.add(HorizontalRule.getInstance());
 		layout.add(BSRow.newInstance()
-		                .add(new SmallText<>("Made with <i class=\"fa fa-heart text-danger\" aria-hidden=\"true\"></i> by <span\n" +
-		                                     "                                class=\"text-secondary font-weight-bold\">Mohamed\n" +
-		                                     "                                Azouaoui</span>").addClass(Col_Md_12)));
-
+		                .add(BSColumn.newInstance(Col_Md_12)
+		                             .add(new SmallText<>("Made with <i class=\"fa fa-heart text-danger\" aria-hidden=\"true\"></i> by <span\n" +
+				                                                  "                                class=\"text-secondary font-weight-bold\">Mohamed\n" +
+				                                                  "                                Azouaoui</span>"))));
+		
 		BSFormGroup<?, ?> group = new BSFormGroup<>().addClass(Col_Md_12);
 		Link<?> githubLink = new Link<>("https://github.com/azouaoui-med", "_blank")
 				                 .addClass(Btn)

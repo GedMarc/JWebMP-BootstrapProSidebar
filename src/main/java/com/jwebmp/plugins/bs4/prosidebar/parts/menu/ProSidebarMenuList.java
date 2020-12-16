@@ -10,7 +10,7 @@ import com.jwebmp.core.base.interfaces.IIcon;
 
 import static com.jwebmp.core.utilities.StaticStrings.*;
 
-public class ProSidebarMenuList<C extends ListChildren, A extends Enum & AttributeDefinitions, E extends GlobalEvents, J extends List<C, A, E, J>>
+public class ProSidebarMenuList<C extends ListChildren, A extends Enum<?> & AttributeDefinitions, E extends GlobalEvents, J extends List<C, A, E, J>>
 		extends List<C, A, E, J>
 {
 	public ProSidebarMenuList()

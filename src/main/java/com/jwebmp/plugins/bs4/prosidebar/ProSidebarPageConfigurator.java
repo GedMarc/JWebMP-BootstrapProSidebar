@@ -2,6 +2,8 @@ package com.jwebmp.plugins.bs4.prosidebar;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.base.html.Link;
+import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
 import com.jwebmp.plugins.bs4.prosidebar.enumerations.IProSidebarTheme;
@@ -15,6 +17,26 @@ import java.util.TreeSet;
 import static com.guicedee.guicedinjection.json.StaticStrings.STRING_SPACE;
 import static com.jwebmp.core.utilities.StaticStrings.*;
 
+@PluginInformation(pluginName = "Bootstrap Pro Sidebar",
+		pluginUniqueName = "bootstrap-pro-sidebar",
+		pluginDescription = "Responsive sidebar template with dropdown menu based on bootstrap framwork",
+		pluginVersion = "3.5.0",
+		pluginDependancyUniqueIDs = "bootstrap",
+		pluginCategories = "bootstrap, sidebar, menu, navigation",
+		pluginSubtitle = "Pro sidebar template",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-BootstrapProSidebar",
+		pluginSourceUrl = "https://github.com/azouaoui-med/pro-sidebar-template",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-BootstrapProSidebar/wiki",
+		pluginOriginalHomepage = "https://azouaoui-med.github.io/pro-sidebar-template/src/",
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.bootstrap/jwebmp-bootstrap-pro-sidebar",
+		pluginIconUrl = "",
+		pluginIconImageUrl = "",
+		pluginLastUpdatedDate = "2020/12/14",
+		pluginArtifactId = "jwebmp-bootstrap-pro-sidebar",
+		pluginGroupId = "com.jwebmp.plugins.bootstrap",
+		pluginModuleName = "com.jwebmp.plugins.bs4.prosidebar",
+		pluginStatus = PluginStatus.Released
+)
 public class ProSidebarPageConfigurator implements IPageConfigurator<ProSidebarPageConfigurator>
 {
 	private static boolean enabled = true;
@@ -46,7 +68,8 @@ public class ProSidebarPageConfigurator implements IPageConfigurator<ProSidebarP
 	public @NotNull Page<?> configure(Page<?> page)
 	{
 		JQueryPageConfigurator.setRequired(true);
-
+		
+		page.addJavaScriptReference(ProSidebarReferences.ProSidebarReferenceReference.getJavaScriptReference());
 		page.addCssReference(ProSidebarReferences.ProSidebarReferenceReference.getCssReference());
 		page.addCssReference(ProSidebarReferences.ProSidebarDefaultThemesReference.getCssReference());
 

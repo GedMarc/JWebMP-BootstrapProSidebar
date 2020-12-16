@@ -3,14 +3,15 @@ package com.jwebmp.plugins.bs4.prosidebar.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 public class ProSidebarDisableOnMobileFeature<J extends ProSidebarDisableOnMobileFeature<J>>
-		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
+		extends Feature<GlobalFeatures, JavaScriptPart<?>, J>
 {
-	private ComponentHierarchyBase pageWrapper;
+	private IComponentHierarchyBase<?,?> pageWrapper;
 
-	public ProSidebarDisableOnMobileFeature(ComponentHierarchyBase component, ComponentHierarchyBase pageWrapper)
+	public ProSidebarDisableOnMobileFeature(IComponentHierarchyBase<?,?> component, IComponentHierarchyBase<?,?> pageWrapper)
 	{
 		super("ProSidebarToggleSidebarFeature", component);
 		this.pageWrapper = pageWrapper;
@@ -19,7 +20,7 @@ public class ProSidebarDisableOnMobileFeature<J extends ProSidebarDisableOnMobil
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + renderQuery());
+		addQuery(getComponent().asBase().getJQueryID() + renderQuery());
 	}
 
 	private String renderQuery()

@@ -5,6 +5,7 @@ import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.interfaces.IIcon;
 import com.jwebmp.plugins.bootstrap4.badge.BSBadge;
 import com.jwebmp.plugins.bootstrap4.dropdown.BSDropDown;
+import com.jwebmp.plugins.bootstrap4.dropdown.parts.BSDropDownLink;
 
 import static com.jwebmp.core.base.html.attributes.GlobalAttributes.*;
 import static com.jwebmp.core.base.html.attributes.LinkAttributes.*;
@@ -13,7 +14,7 @@ public class ProSidebarFooterNotificationsDropDown<J extends ProSidebarFooterNot
 		extends BSDropDown<J>
 {
 	private IIcon<?,?> icon;
-	private Link<?> dropDownLink = new Link<>("#");
+	private BSDropDownLink<?> dropDownLink = new BSDropDownLink<>("#");
 	private BSBadge<?> badge;
 
 	private ProSidebarFooterNotificationsMenu<?> notificationsMenu;
@@ -76,7 +77,7 @@ public class ProSidebarFooterNotificationsDropDown<J extends ProSidebarFooterNot
 	 *
 	 * @return Value for property 'dropDownLink'.
 	 */
-	public Link<?> getDropDownLink()
+	public BSDropDownLink<?> getDropDownLink()
 	{
 		return dropDownLink;
 	}
@@ -88,7 +89,7 @@ public class ProSidebarFooterNotificationsDropDown<J extends ProSidebarFooterNot
 	 * 		Value to set for property 'dropDownLink'.
 	 */
 	@SuppressWarnings("unchecked")
-	public J setDropDownLink(Link<?> dropDownLink)
+	public J setDropDownLink(BSDropDownLink<?> dropDownLink)
 	{
 		this.dropDownLink = dropDownLink;
 		return (J) this;

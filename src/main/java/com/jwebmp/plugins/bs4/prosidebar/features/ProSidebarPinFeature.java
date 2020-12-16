@@ -7,11 +7,11 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 import com.jwebmp.plugins.bs4.prosidebar.ProSidebar;
 
 public class ProSidebarPinFeature<J extends ProSidebarPinFeature<J>>
-		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
+		extends Feature<GlobalFeatures, JavaScriptPart<?>, J>
 {
-	private ProSidebar sidebar;
+	private ProSidebar<?> sidebar;
 
-	public ProSidebarPinFeature(String componentId, ComponentHierarchyBase component, ProSidebar sidebar)
+	public ProSidebarPinFeature(String componentId, ComponentHierarchyBase component, ProSidebar<?> sidebar)
 	{
 		super("ProSidebarPinFeature", component);
 		component.setID(componentId);
@@ -21,7 +21,7 @@ public class ProSidebarPinFeature<J extends ProSidebarPinFeature<J>>
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + renderQuery());
+		addQuery(getComponent().asBase().getJQueryID() + renderQuery());
 	}
 
 	private String renderQuery()

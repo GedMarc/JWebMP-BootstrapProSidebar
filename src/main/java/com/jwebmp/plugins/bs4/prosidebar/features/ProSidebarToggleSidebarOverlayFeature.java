@@ -3,13 +3,14 @@ package com.jwebmp.plugins.bs4.prosidebar.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 public class ProSidebarToggleSidebarOverlayFeature<J extends ProSidebarToggleSidebarOverlayFeature<J>>
-		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
+		extends Feature<GlobalFeatures, JavaScriptPart<?>, J>
 {
 
-	public ProSidebarToggleSidebarOverlayFeature(ComponentHierarchyBase component)
+	public ProSidebarToggleSidebarOverlayFeature(IComponentHierarchyBase<?,?> component)
 	{
 		super("ProSidebarToggleSidebarOverlayFeature", component);
 	}
@@ -17,7 +18,7 @@ public class ProSidebarToggleSidebarOverlayFeature<J extends ProSidebarToggleSid
 	@Override
 	protected void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + renderQuery());
+		addQuery(getComponent().asBase().getJQueryID() + renderQuery());
 	}
 
 	private String renderQuery()

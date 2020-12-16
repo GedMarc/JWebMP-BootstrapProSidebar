@@ -3,16 +3,17 @@ package com.jwebmp.plugins.bs4.prosidebar.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 public class ProSidebarDropdownMenuFeature<J extends ProSidebarDropdownMenuFeature<J>>
-		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
+		extends Feature<GlobalFeatures, JavaScriptPart<?>, J>
 {
 
 	private int slideUpRate = 200;
 	private int slideDownRate = 200;
 
-	public ProSidebarDropdownMenuFeature(ComponentHierarchyBase component)
+	public ProSidebarDropdownMenuFeature(IComponentHierarchyBase<?,?> component)
 	{
 		super("ProSidebarDropdownMenuFeature", component);
 	}

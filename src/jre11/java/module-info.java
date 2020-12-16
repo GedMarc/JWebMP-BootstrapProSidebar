@@ -1,3 +1,5 @@
+import com.jwebmp.plugins.bs4.prosidebar.ProSidebarModuleInclusion;
+
 module com.jwebmp.plugins.bs4.prosidebar {
 
 	exports com.jwebmp.plugins.bs4.prosidebar;
@@ -25,4 +27,6 @@ module com.jwebmp.plugins.bs4.prosidebar {
 	opens com.jwebmp.plugins.bs4.prosidebar.parts.footer to com.jwebmp.core, com.google.guice;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.bs4.prosidebar.ProSidebarPageConfigurator;
+	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with ProSidebarModuleInclusion;
+	
 }

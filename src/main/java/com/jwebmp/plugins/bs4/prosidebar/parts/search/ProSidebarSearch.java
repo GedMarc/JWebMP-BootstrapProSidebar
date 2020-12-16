@@ -2,6 +2,7 @@ package com.jwebmp.plugins.bs4.prosidebar.parts.search;
 
 import com.jwebmp.core.base.html.DivSimple;
 import com.jwebmp.core.base.html.inputs.InputSearchType;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.base.interfaces.IIcon;
 import com.jwebmp.plugins.bootstrap4.forms.groups.sets.BSFormInputGroup;
@@ -27,21 +28,21 @@ public class ProSidebarSearch<J extends ProSidebarSearch<J>>
 	}
 
 	@Override
-	public @NotNull J add(@NotNull IComponentHierarchyBase newChild)
+	public @NotNull J add(@NotNull GlobalChildren newChild)
 	{
 		containDiv.add(newChild);
 		return (J) this;
 	}
 
 	@Override
-	public @NotNull J add(@NotNull Integer position, @NotNull IComponentHierarchyBase newChild)
+	public @NotNull J add(@NotNull Integer position, @NotNull GlobalChildren newChild)
 	{
 		containDiv.add(position, newChild);
 		return (J) this;
 	}
 
 	@Override
-	public boolean remove(IComponentHierarchyBase childToRemove)
+	public boolean remove(GlobalChildren childToRemove)
 	{
 		return containDiv.remove(childToRemove);
 	}

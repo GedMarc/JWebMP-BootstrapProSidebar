@@ -1,8 +1,10 @@
 package com.jwebmp.plugins.bs4.prosidebar;
 
 import com.jwebmp.core.base.html.DivSimple;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
+import com.jwebmp.plugins.bootstrap4.containers.BSRow;
 import jakarta.validation.constraints.NotNull;
 
 public class ProSidebarLayout<J extends ProSidebarLayout<J>>
@@ -52,17 +54,15 @@ public class ProSidebarLayout<J extends ProSidebarLayout<J>>
 		this.mainContent = mainContent;
 		return (J) this;
 	}
-
-	@Override
-	public @NotNull J add(@NotNull Integer position, @NotNull IComponentHierarchyBase newChild)
+	
+	public @NotNull J add(@NotNull Integer position, @NotNull BSRow<?> newChild)
 	{
 		mainContent.getContainer()
 		           .add(position, newChild);
 		return (J) this;
 	}
 
-	@Override
-	public @NotNull J add(@NotNull IComponentHierarchyBase newChild)
+	public @NotNull J add(@NotNull BSRow<?> newChild)
 	{
 		mainContent.getContainer()
 		           .add(newChild);

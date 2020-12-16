@@ -3,14 +3,15 @@ package com.jwebmp.plugins.bs4.prosidebar.features;
 import com.jwebmp.core.Feature;
 import com.jwebmp.core.base.ComponentHierarchyBase;
 import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
 
 public class ProSidebarSwitchBackgroundFeature<J extends ProSidebarSwitchBackgroundFeature<J>>
-		extends Feature<GlobalFeatures<?, ?>, JavaScriptPart<?>, J>
+		extends Feature<GlobalFeatures, JavaScriptPart<?>, J>
 {
 	private String backgroundImageClass;
 
-	public ProSidebarSwitchBackgroundFeature(ComponentHierarchyBase component, String initialBackgroundImage)
+	public ProSidebarSwitchBackgroundFeature(IComponentHierarchyBase<?,?> component, String initialBackgroundImage)
 	{
 		super("ProSidebarSwitchBackgroundFeature", component);
 		this.backgroundImageClass = initialBackgroundImage;
@@ -35,7 +36,7 @@ public class ProSidebarSwitchBackgroundFeature<J extends ProSidebarSwitchBackgro
 	public ProSidebarSwitchBackgroundFeature<J> setBackgroundImageClass(String backgroundImageClass)
 	{
 		this.backgroundImageClass = backgroundImageClass;
-		getComponent().addAttribute("prosidebar-data-bg", backgroundImageClass);
+		getComponent().asAttributeBase().addAttribute("prosidebar-data-bg", backgroundImageClass);
 		return this;
 	}
 

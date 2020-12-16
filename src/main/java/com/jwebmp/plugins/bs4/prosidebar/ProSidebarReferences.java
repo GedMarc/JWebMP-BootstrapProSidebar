@@ -7,13 +7,12 @@ import com.jwebmp.core.base.servlets.interfaces.IReferencePool;
 public enum ProSidebarReferences
 		implements IReferencePool
 {
-	ProSidebarReferenceReference(//new JavascriptReference(),
-	                             null,
-	                             new CSSReference("ProSidebarCSSReference", 1.0d, "bower_components/bootstrapprosidebar/src/css/main.css")),
+	ProSidebarReferenceReference(new JavascriptReference("ProSidebarJS",3.50,"bower_components/bootstrapprosidebar/js/main.min.js"),
+	                             new CSSReference("ProSidebarCSSReference", 1.0d, "bower_components/bootstrapprosidebar/src/css/main.min.css")),
 
 	ProSidebarDefaultThemesReference(//new JavascriptReference(),
 	                             null,
-	                             new CSSReference("ProSidebarCSSThemesReference", 1.0d, "bower_components/bootstrapprosidebar/src/css/sidebar-themes.css")),
+	                             new CSSReference("ProSidebarCSSThemesReference", 1.0d, "bower_components/bootstrapprosidebar/src/css/sidebar-themes.min.css")),
 
 
 	;
