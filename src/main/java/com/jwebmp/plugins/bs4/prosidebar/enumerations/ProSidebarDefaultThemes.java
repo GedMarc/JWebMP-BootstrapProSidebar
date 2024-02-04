@@ -1,7 +1,7 @@
 package com.jwebmp.plugins.bs4.prosidebar.enumerations;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_DASH;
-import static com.guicedee.guicedinjection.json.StaticStrings.CHAR_UNDERSCORE;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.CHAR_DASH;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.CHAR_UNDERSCORE;
 
 public enum ProSidebarDefaultThemes implements IProSidebarTheme<ProSidebarDefaultThemes>
 {
